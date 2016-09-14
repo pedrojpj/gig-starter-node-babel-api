@@ -1,5 +1,5 @@
-import config from '../../../lib/config';
-import { JsonService } from '../../../lib/services';
+import config from '~/lib/config';
+import { JsonService } from '~/lib/services';
 
 export default function(app){
 
