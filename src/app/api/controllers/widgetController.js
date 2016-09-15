@@ -1,5 +1,5 @@
-import { JsonService } from '~/lib/services';
-import { WidgetModel } from '~/lib/models';
+import { JsonService } from '~/src/lib/services';
+import { WidgetModel } from '~/src/lib/models';
 
 class WidgetController {
     constructor() {

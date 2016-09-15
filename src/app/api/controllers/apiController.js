@@ -1,4 +1,4 @@
-import { JsonService } from '~/lib/services';
+import { JsonService } from '~/src/lib/services';
 
 class ApiController {
     constructor() {

@@ -2,11 +2,13 @@
   "name": "gig-starter-node-api-kit",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon index.js --exec babel-node",
-    "fixtures": "babel-node lib/fixtures.js"
+    "start-dev": "nodemon src/index.js --exec babel-node",
+    "start" : "node build/index.js",
+    "build": "babel src -d build",
+    "fixtures": "babel-node src/lib/fixtures.js"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 //Globals
 global.__basedir = __dirname;
-global.params = require('./package.json');
+global.params = require('~/package.json');
 
 //Dependencies
 import express from 'express';
