@@ -1,12 +1,9 @@
-import { JsonService } from '~/src/lib/services';
+import expressDeliver from 'express-deliver';
 
-class ApiController {
-    constructor() {
-
+const ApiController = expressDeliver.wrapper({
+    index: () => {
+        return 'Hello API';
     }
-    index(req, res) {
-        res.json(JsonService.response(200,'Hello API'));
-    }
-}
+});
 
-export default new ApiController();
+export default ApiController;

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon src/index.js --exec babel-node",
-    "start" : "node build/index.js",
+    "start": "node build/index.js",
     "build": "babel src -d build",
     "fixtures": "babel-node src/lib/fixtures.js"
   },
@@ -23,6 +23,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "express-deliver": "0.0.4",
     "mongoose": "^4.6.0",
     "q": "^1.4.1"
   },

@@ -1,17 +1,10 @@
-import { JsonService } from '~/src/lib/services';
 import { WidgetModel } from '~/src/lib/models';
+import expressDeliver from 'express-deliver';
 
-class WidgetController {
-    constructor() {
-
+const WidgetController = expressDeliver.wrapper({
+    list: function(req, res) {
+        return WidgetModel.find()
     }
-    list(req, res) {
-        WidgetModel.find()
-            .then((response) => {
-                res.json(JsonService.response(200, response));
+});
 
-            })
-    }
-}
-
-export default new WidgetController();
+export default WidgetController;

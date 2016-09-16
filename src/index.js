@@ -4,6 +4,7 @@ global.params = require('~/package.json');
 
 //Dependencies
 import express from 'express';
+import expressDeliver from 'express-deliver';
 
 //Libraries
 import config from './lib/config';
@@ -23,6 +24,8 @@ const apiPort = config.apps.api.port;
 api.middlewares(apiApp);
 api.routes(apiApp);
 api.handlers(apiApp);
+
+expressDeliver.handlers(apiApp);
 
 
 apiApp.listen(apiPort,function(){

@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import config from '../config';
 
+mongoose.Promise = global.Promise;
+
 export default {
     connect: function() {
         mongoose.connect('mongodb://'+config.db.host+':'+config.db.port+'/'+config.db.name, {
