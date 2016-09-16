@@ -7,21 +7,16 @@ DbService.connect();
 
 let promises = [];
 
-
 for (let i = 0; i < 10; i++) {
-
     promises.push(
-    WidgetModel.create({
-        column: faker.random.number(),
-        row: faker.random.number(),
-        image: faker.image.imageUrl(),
-        thumbnail: faker.image.imageUrl()
-    })
-    )
-
+        WidgetModel.create({
+            column: faker.random.number(),
+            row: faker.random.number(),
+            image: faker.image.imageUrl(),
+            thumbnail: faker.image.imageUrl()
+        })
+    );
 }
-
-
 
 //////////
 // DONE //
