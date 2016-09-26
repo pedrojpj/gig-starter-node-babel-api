@@ -1,47 +1,15 @@
 import config from '~/src/lib/config';
-import { JsonService } from '~/src/lib/services';
+import expressDeliver from 'express-deliver';
+
+const debug = require('debug')(config.appName+':handlers');
 
 export default function(app){
 
-	/**
-	 * Route not found
-	 */
-	app.use(function(req,res,next){
-		console.log('404',req.url);
-		res.status(404).json(JsonService.errorResponse(404,'Route not found'));
-	});
+	//404 and 500
+   expressDeliver.handlers(app)
 
-	/**
-	 * Error catch
-	 */
-	app.use(function(err,req,res,next){
+   expressDeliver.on('error',function(err){
+	   debug('error', err._request.url, err.code, err.message,err.data,err.stack);
+   })
 
-		//Error body
-		var errorData;
-		if (err instanceof Error){
-			errorData = {
-				name :err.name,
-				message :err.message,
-				stack :err.stack.split('\n')
-			};
-		}else{
-			errorData = err;
-		}
-
-		//Server log
-		console.log('-------- error ocurred -------------------');
-		console.log(errorData);
-
-
-		//Response
-		var showErrors = config.debug;
-		var errorResponse = JsonService.errorResponse(500, showErrors ? errorData : 'There was an error');
-
-		try{
-			res.json(errorResponse);
-		}catch(e){
-			console.log('Error not sent, headers already sent');
-		}
-		res.end();
-	});
 };

@@ -2,6 +2,8 @@
 global.__basedir = __dirname;
 global.params = require('~/package.json');
 
+const debug = require('debug')(config.appName);
+
 //Dependencies
 import express from 'express';
 import expressDeliver from 'express-deliver';
@@ -29,5 +31,5 @@ expressDeliver.handlers(apiApp);
 
 
 apiApp.listen(apiPort,function(){
-	console.log('>>> API http listening '+apiPort+'');
+	debug('>>> API http listening '+apiPort+'');
 });
