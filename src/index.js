@@ -31,5 +31,5 @@ expressDeliver.handlers(apiApp);
 
 
 apiApp.listen(apiPort,function(){
-	debug('>>> API http listening '+apiPort+'');
+	console.log(`>>> API http listening ${apiPort}`);
 });

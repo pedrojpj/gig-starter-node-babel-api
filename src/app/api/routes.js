@@ -1,5 +1,5 @@
 import express from 'express';
-import { ApiController, WidgetController } from '../controllers';
+import { ApiController, WidgetController } from './controllers';
 
 export default function(app){
 

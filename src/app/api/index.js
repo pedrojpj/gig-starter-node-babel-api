@@ -1,6 +1,6 @@
-import handlers from './config/handlers';
-import middlewares from './config/middlewares';
-import routes from './config/routes';
+import handlers from './handlers';
+import middlewares from './middlewares';
+import routes from './routes';
 
 export default {
     handlers,
