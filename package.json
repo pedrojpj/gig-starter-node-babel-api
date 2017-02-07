@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "nodemon src/index.js --exec babel-node --debug",
+    "start:dev": "DEBUG=api* babel-watch src/index.js",
     "start": "node build/index.js",
     "build": "babel src -d build",
     "fixtures": "babel-node src/lib/fixtures.js"
@@ -24,7 +24,7 @@
     "body-parser": "^1.15.2",
     "debug": "^2.2.0",
     "express": "^4.14.0",
-    "express-deliver": "0.0.4",
+    "express-deliver": "0.0.9",
     "mongoose": "^4.6.0",
     "q": "^1.4.1"
   },
@@ -33,12 +33,15 @@
     "babel-core": "^6.13.1",
     "babel-node-debug": "^2.0.0",
     "babel-plugin-module-resolver": "^2.2.0",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.13.1",
     "babel-preset-es2015-node4": "^2.1.0",
     "babel-preset-stage-2": "^6.13.0",
     "babel-register": "^6.11.6",
     "babel-root-import": "^4.1.3",
+    "babel-watch": "^2.0.6",
+    "debug": "^2.6.0",
     "faker": "^3.1.0",
     "nodemon": "^1.10.2"
   }

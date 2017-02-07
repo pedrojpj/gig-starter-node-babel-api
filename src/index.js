@@ -14,22 +14,24 @@ import config from './lib/config';
 //services
 import { DbService } from './lib/services';
 
-DbService.connect();
+
+if (config.db) {
+	DbService.connect();
+}
 
 //apps
 import api from './app/api';
 
-const apiApp = express();
-const apiPort = config.apps.api.port;
+const app = express();
+const port = config.port;
 
 
-api.middlewares(apiApp);
-api.routes(apiApp);
-api.handlers(apiApp);
+api.middlewares(app);
+api.routes(app);
+api.handlers(app);
 
-expressDeliver.handlers(apiApp);
+expressDeliver.handlers(app);
 
-
-apiApp.listen(apiPort,function(){
-	console.log(`>>> API http listening ${apiPort}`);
+app.listen(port,function(){
+	debug(`>>> API http listening ${port}`);
 });

@@ -1,10 +1,7 @@
 {
-    "apps" : {
-        "api": {
-            "baseurl": "http://localhost:8003/",
-            "port": 8003
-        }
-    },
+    "appName" : "api",
+    "baseurl": "http://localhost:8003/",
+    "port": 8003,
     "db": {
         "host": "localhost",
         "port": "27017",
